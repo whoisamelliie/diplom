@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", sans-serif;
+}
+
+/* @font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter24pt-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+} */
+@theme {
+  --font-poppins: var(--font-poppins);
+  --font-inter: var(--font-inter);
+  --font-roboto: var(--font-roboto);
+  --font-poppins-medium: var(--font-poppins-medium);
+}
+
+.gradient {
+  @apply bg-linear-to-r from-[#7a87fb] to-[#ffd49c];
+}
+
+@theme {
+  --color-dark-gray: #1c1c1c;
+  --color-light-gray: #292929;
+  --color-pr-white: #fafafa;
+  --color-box-black: #151515;
+  --color-dark-black: #101111;
+  --color-box-black-40: rgba(21, 21, 21, 0.4);
+}
+
+.btn-gradient-border {
+  display: inline-block;
+  padding: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #ffd49c, #7a87fb);
+}
+
+.btn-gradient-border > .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #7a87fb, #ffd49c);
+  border-radius: 9999px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: black;
+}
+.card-half-border {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.card-half-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 50%;
+  background: linear-gradient(to right, #ffd49c, #7a87fb);
+  z-index: 1;
+}
+
+.card-half-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 50%;
+  background: linear-gradient(to bottom, #ffd49c, #7a87fb);
+  z-index: 1;
+}
+
+.corner-gradient-angle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background: conic-gradient(from 225deg, #ffd49c, #7a87fb);
+  border-end-end-radius: 1rem;
+  z-index: 1;
+  pointer-events: none;
+}
